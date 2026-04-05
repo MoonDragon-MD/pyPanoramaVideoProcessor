@@ -27,6 +27,8 @@ If you want to start it manually type in the terminal
 
 ### Original input
 
+![img pano](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/img/snowy_mountains.gif?raw=true)
+
 ![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/Example/Original-input/snowy_mountains.mp4?raw=true)
 
 ### Output
