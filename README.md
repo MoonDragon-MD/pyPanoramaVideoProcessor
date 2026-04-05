@@ -14,6 +14,13 @@ python 3.8+
 
 ```pip install PyQt5 opencv-python```
 
+### Usage
+On linux if you used the installer you will find it in the main menu.
+
+If you want to start it manually type in the terminal
+
+```python3 pyPanoramaVideoProcessor.py```
+
 ### Original input
 
 ![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/Example/Original-input/snowy_mountains.mp4?raw=true)
