@@ -62,10 +62,10 @@ class PanoramaApp(QMainWindow):
         # Input video with drag and drop
         self.input_video = QLineEdit("input_verticale.mp4")
         self.input_video.setReadOnly(True)
-        step1_layout.addWidget(QLabel("Video di input:"))
+        step1_layout.addWidget(QLabel("Imput video:"))
         self.drag_drop_area = DragDropWidget(self, self.input_video)
         step1_layout.addWidget(self.drag_drop_area)
-        btn_browse_video = QPushButton("Sfoglia...")
+        btn_browse_video = QPushButton("Browse...")
         btn_browse_video.clicked.connect(self.browse_input_video)
         step1_layout.addWidget(btn_browse_video)
 
@@ -113,7 +113,7 @@ class PanoramaApp(QMainWindow):
         param_layout = QHBoxLayout()
         self.direction = QComboBox()
         self.direction.addItems(["right", "left", "Automatic (slow)"])
-        param_layout.addWidget(QLabel("Direzione:"))
+        param_layout.addWidget(QLabel("Direction:"))
         param_layout.addWidget(self.direction)
         btn_info_dir = QPushButton("i")
         btn_info_dir.setFixedSize(20, 20)
@@ -128,7 +128,7 @@ class PanoramaApp(QMainWindow):
         step1_layout.addWidget(self.progress_bar)
 
         # Button to perform the first step
-        btn_generate = QPushButton("Genera Panorama")
+        btn_generate = QPushButton("Generate Panorama")
         btn_generate.clicked.connect(self.generate_panorama)
         step1_layout.addWidget(btn_generate)
 
@@ -143,7 +143,7 @@ class PanoramaApp(QMainWindow):
         self.panorama_image.setReadOnly(True)
         step2_layout.addWidget(QLabel("Panorama PNG:"))
         step2_layout.addWidget(self.panorama_image)
-        btn_browse_png = QPushButton("Sfoglia...")
+        btn_browse_png = QPushButton("Browse...")
         btn_browse_png.clicked.connect(self.browse_panorama)
         step2_layout.addWidget(btn_browse_png)
 
@@ -151,7 +151,7 @@ class PanoramaApp(QMainWindow):
         self.shifts_file.setReadOnly(True)
         step2_layout.addWidget(QLabel("File shifts.json:"))
         step2_layout.addWidget(self.shifts_file)
-        btn_browse_shifts = QPushButton("Sfoglia...")
+        btn_browse_shifts = QPushButton("Browse...")
         btn_browse_shifts.clicked.connect(self.browse_shifts)
         step2_layout.addWidget(btn_browse_shifts)
 
@@ -159,7 +159,7 @@ class PanoramaApp(QMainWindow):
         param_layout = QHBoxLayout()
         self.direction_step2 = QComboBox()
         self.direction_step2.addItems(["right", "left", "auto"])
-        param_layout.addWidget(QLabel("Direzione:"))
+        param_layout.addWidget(QLabel("Direction:"))
         param_layout.addWidget(self.direction_step2)
         btn_info_dir2 = QPushButton("i")
         btn_info_dir2.setFixedSize(20, 20)
@@ -171,13 +171,13 @@ class PanoramaApp(QMainWindow):
         # Synchronization parameters with information buttons
         param_layout = QHBoxLayout()
         self.shift_scale_mode = QComboBox()
-        self.shift_scale_mode.addItems(["Normale", "Decelera (0.98)", "Accelera (1.11)", "Personalizzato"])
-        param_layout.addWidget(QLabel("Modalità shift scale:"))
+        self.shift_scale_mode.addItems(["Normal", "Decelerate (0.98)", "Acceleration (1.11)", "Customized"])
+        param_layout.addWidget(QLabel("Scale shift mode:"))
         param_layout.addWidget(self.shift_scale_mode)
         btn_info_shift = QPushButton("i")
         btn_info_shift.setFixedSize(20, 20)
         btn_info_shift.clicked.connect(lambda: QMessageBox.information(self, "Info", 
-            "'Scale shift mode' controls the speed at which the panorama scrolls in the final video compared to the shifts calculated in Step 1. 'Normal' uses the automatically calculated speed, proportional to the length of the panorama. 'Decelerate (0.98)' slows movement slightly (reducing speed by 2%), 'Accelerate (1.11)' increases it by 11%. 'Custom' allows you to specify a manual value (between 0.5 and 2.0) to fine-tune the speed, useful for particular synchronizations or specific visual effects."))
+            "'Scale shift mode' controls the speed at which the panorama scrolls in the final video compared to the shifts calculated in Step 1. 'Normal' uses the automatically calculated speed, proportional to the length of the panorama. 'Deceleratete (0.98)' slows movement slightly (reducing speed by 2%), 'Accelerationte (1.11)' increases it by 11%. 'Custom' allows you to specify a manual value (between 0.5 and 2.0) to fine-tune the speed, useful for particular synchronizations or specific visual effects."))
         param_layout.addWidget(btn_info_shift)
         step2_layout.addLayout(param_layout)
 
@@ -187,7 +187,7 @@ class PanoramaApp(QMainWindow):
         self.shift_scale_value.setSingleStep(0.01)
         self.shift_scale_value.setValue(1.11)
         self.shift_scale_value.setEnabled(False)
-        param_layout.addWidget(QLabel("Valore shift scale personalizzato:"))
+        param_layout.addWidget(QLabel("Custom shift scale value:"))
         param_layout.addWidget(self.shift_scale_value)
         btn_info_shift_val = QPushButton("i")
         btn_info_shift_val.setFixedSize(20, 20)
@@ -198,8 +198,8 @@ class PanoramaApp(QMainWindow):
 
         param_layout = QHBoxLayout()
         self.offset_mode = QComboBox()
-        self.offset_mode.addItems(["Normale", "Offset fisso (-50 px)", "Offset progressivo (+0.087 px/frame)", "Personalizzato"])
-        param_layout.addWidget(QLabel("Modalità offset:"))
+        self.offset_mode.addItems(["Normal", "Fixed Offset (-50 px)", "Progressive Offset (+0.087 px/frame)", "Customized"])
+        param_layout.addWidget(QLabel("Offset mode:"))
         param_layout.addWidget(self.offset_mode)
         btn_info_offset = QPushButton("i")
         btn_info_offset.setFixedSize(20, 20)
@@ -243,14 +243,14 @@ class PanoramaApp(QMainWindow):
         step2_layout.addWidget(self.progress_bar_video)
 
         # Button to perform the second step
-        btn_convert = QPushButton("Genera Video MP4")
+        btn_convert = QPushButton("Generate Video MP4")
         btn_convert.clicked.connect(self.generate_video)
         step2_layout.addWidget(btn_convert)
 
         layout.addLayout(step2_layout)
 
         # Program version
-        layout.addWidget(QLabel(f"Versione: {self.VERSION}", alignment=Qt.AlignRight))
+        layout.addWidget(QLabel(f"Version: {self.VERSION}", alignment=Qt.AlignRight))
 
         layout.addStretch()
 
@@ -275,10 +275,10 @@ class PanoramaApp(QMainWindow):
             self.shifts_file.setText(file)
 
     def toggle_shift_scale(self):
-        self.shift_scale_value.setEnabled(self.shift_scale_mode.currentText() == "Personalizzato")
+        self.shift_scale_value.setEnabled(self.shift_scale_mode.currentText() == "Customized")
 
     def toggle_offset(self):
-        self.offset_value.setEnabled(self.offset_mode.currentText() == "Personalizzato")
+        self.offset_value.setEnabled(self.offset_mode.currentText() == "Customized")
 
     def generate_panorama(self):
         input_video = self.input_video.text()
@@ -642,11 +642,11 @@ def run_generate_video(input_video, panorama_image, shifts_file, shift_scale_mod
     max_shift = cumulative_shifts[-1] - initial_shift if cumulative_shifts else pan_width - scroll_width
 
     # Imposta shift_scale
-    if shift_scale_mode == "Normale":
+    if shift_scale_mode == "Normal":
         shift_scale = (pan_width - scroll_width) / max_shift if max_shift > 0 else 1
-    elif shift_scale_mode == "Decelera (0.98)":
+    elif shift_scale_mode == "Decelerate (0.98)":
         shift_scale = (pan_width - scroll_width) / max_shift * 0.98
-    elif shift_scale_mode == "Accelera (1.11)":
+    elif shift_scale_mode == "Acceleration (1.11)":
         shift_scale = (pan_width - scroll_width) / max_shift * 1.11
     else:
         shift_scale = (pan_width - scroll_width) / max_shift * shift_scale_value
@@ -661,11 +661,11 @@ def run_generate_video(input_video, panorama_image, shifts_file, shift_scale_mod
 
         if frame_idx < len(cumulative_shifts):
             offset = int((cumulative_shifts[frame_idx] - initial_shift) * shift_scale)
-            if offset_mode == "Offset fisso (-50 px)":
+            if offset_mode == "Fixed Offset (-50 px)":
                 offset -= 50
-            elif offset_mode == "Offset progressivo (+0.087 px/frame)":
+            elif offset_mode == "Progressive Offset (+0.087 px/frame)":
                 offset += int(frame_idx * 0.087)
-            elif offset_mode == "Personalizzato":
+            elif offset_mode == "Customized":
                 offset += int(frame_idx * offset_value)
         else:
             offset = int(frame_idx * (pan_width - scroll_width) / max(frame_count - 1, 1))
