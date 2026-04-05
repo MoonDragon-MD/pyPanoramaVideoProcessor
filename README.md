@@ -33,5 +33,7 @@ If you want to start it manually type in the terminal
 
 ![img pano](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/Example/panorama_generato-low.jpg?raw=true)
 
+![img pano](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/img/output_finale-low.gif?raw=true)
+
 ![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/Example/output_finale-low.mp4?raw=true)
 
