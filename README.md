@@ -23,15 +23,15 @@ If you want to start it manually type in the terminal
 
 ### Screenshot
 
-![img](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/img/Schermate.jpg?raw=true)
+![alt text](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/img/Schermate.jpg?raw=true)
 
 ### Original input
 
-![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/Example/Original-input/snowy_mountains.mp4?raw=true)
+![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/Example/Original-input/snowy_mountains.mp4?raw=true)
 
 ### Output
 
-![img pano](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/Example/panorama_generato-low.jpg?raw=true)
+![img pano](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/Example/panorama_generato-low.jpg?raw=true)
 
-![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/Example/output_finale-low.mp4?raw=true)
+![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/blob/main/Example/output_finale-low.mp4?raw=true)
 
