@@ -21,6 +21,10 @@ If you want to start it manually type in the terminal
 
 ```python3 pyPanoramaVideoProcessor.py```
 
+### Screenshot
+
+![img](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/img/Schermate.jpg?raw=true)
+
 ### Original input
 
 ![video](https://github.com/MoonDragon-MD/pyPanoramaVideoProcessor/tree/main/Example/Original-input/snowy_mountains.mp4?raw=true)
